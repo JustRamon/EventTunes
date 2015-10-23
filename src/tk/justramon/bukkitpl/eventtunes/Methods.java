@@ -57,15 +57,22 @@ public class Methods
 		EventTunes.plugin.getConfig().addDefault("DeathEvent.enable", true);
 		EventTunes.plugin.getConfig().addDefault("PortalEvent.file", "PortalEvent.nbs");
 		EventTunes.plugin.getConfig().addDefault("PortalEvent.enable", true);
-		
+
 		EventTunes.plugin.getConfig().options().copyDefaults(true);
 		EventTunes.plugin.saveConfig();
 	}
-	
+
 	public static void notFound(String eventTune)
 	{
 		EventTunes.plugin.getLogger().warning("The file for " + eventTune + " could not be found.");
 	}
+
+	/*public static void cfcEu()
+	{
+		Sunset sunset = new Sunset();
+		Sunrise sunrise = new Sunrise();
+
+	}*/
 
 
 }

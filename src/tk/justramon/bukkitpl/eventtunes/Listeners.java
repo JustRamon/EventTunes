@@ -8,29 +8,28 @@ import org.bukkit.event.player.PlayerPortalEvent;
 
 public class Listeners implements Listener
 {
-	Methods util = new Methods();
+	Methods methods = new Methods();
+
 	@EventHandler
 	public void onPlayerDeath(PlayerDeathEvent event)
 	{
 		String eventTune = "DeathEvent";
 		Player p = event.getEntity();
-		if(util.hasSoundPermission(eventTune, p))
+		if(methods.hasSoundPermission(eventTune, p))
 		{
-			util.playTune(eventTune, p);
+			methods.playTune(eventTune, p);
 		}
-		
+
 	}
-	
+
 	@EventHandler
 	public void onPortalEnter(PlayerPortalEvent event)
 	{
 		String EventTune = "PortalEvent";
 		Player p = event.getPlayer();
-		if(util.hasSoundPermission(EventTune, p))
+		if(methods.hasSoundPermission(EventTune, p))
 		{
-			util.playTune(EventTune, p);
+			methods.playTune(EventTune, p);
 		}
 	}
-	
-	
 }
