@@ -1,0 +1,9 @@
+name: EventTunes
+version: 1.0
+description: Adds configurable tunes to certain events in Minecraft.
+author: [JustRamon]
+
+main: tk.justramon.bukkitpl.eventtunes.EventTunes
+
+depend: [NoteBlockAPI]
+        
