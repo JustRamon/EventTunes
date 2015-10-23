@@ -15,9 +15,9 @@ public class Methods
 	static File songfolder = new File(EventTunes.plugin.getDataFolder().getPath() + "//Songs");
 	static FileConfiguration config = EventTunes.plugin.getConfig();
 
-	public static File getSongPath(String EventTune)
+	public static File getSongPath(String eventTune)
 	{
-		File songpath = new File(songfolder, config.getString(EventTune + ".file"));
+		File songpath = new File(songfolder, config.getString(eventTune + ".file"));
 		return songpath;
 	}
 
@@ -27,26 +27,25 @@ public class Methods
 			songfolder.mkdir();
 	}
 
-	public void playTune(String EventTune, Player p)
+	public void playTune(String eventTune, Player p)
 	{
-		if (Methods.getSongPath(EventTune).exists())
+		if (Methods.getSongPath(eventTune).exists())
 		{
-			Song s = NBSDecoder.parse(Methods.getSongPath(EventTune));
+			Song s = NBSDecoder.parse(Methods.getSongPath(eventTune));
 			SongPlayer sp = new RadioSongPlayer(s);
 			sp.setAutoDestroy(true);
 			sp.addPlayer(p);
 			sp.setPlaying(true);
-			System.out.println("Play");
 		}
 		else
 		{
-			notFound(EventTune);
+			notFound(eventTune);
 		}
 	}
 
-	public boolean hasSoundPermission(String EventTune, Player p)
+	public boolean hasSoundPermission(String eventTune, Player p)
 	{
-		if(p.hasPermission("eventtunes." + EventTune))
+		if(p.hasPermission("eventtunes." + eventTune))
 			return true;
 		else
 			return false;
@@ -63,9 +62,9 @@ public class Methods
 		EventTunes.plugin.saveConfig();
 	}
 	
-	public static void notFound(String EventTune)
+	public static void notFound(String eventTune)
 	{
-		EventTunes.plugin.getLogger().warning("The file for " + EventTune + " could not be found.");
+		EventTunes.plugin.getLogger().warning("The file for " + eventTune + " could not be found.");
 	}
 
 
