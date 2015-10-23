@@ -12,7 +12,7 @@ public class EventTunes extends JavaPlugin
 		Bukkit.getPluginManager().registerEvents(new Listeners(), this);
 		Methods.createSongDir();
 		Methods.loadConfiguration();
-		/*Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable()
+		/*Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable()
 				{
 					public void run()
 					{
