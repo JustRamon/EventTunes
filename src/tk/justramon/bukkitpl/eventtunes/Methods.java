@@ -33,9 +33,16 @@ public class Methods
 		{
 			Song s = NBSDecoder.parse(Methods.getSongPath(eventTune));
 			SongPlayer sp = new RadioSongPlayer(s);
-			sp.setAutoDestroy(true);
-			sp.addPlayer(p);
-			sp.setPlaying(true);
+			if(!sp.isPlaying())
+			{
+				sp.setAutoDestroy(true);
+				sp.addPlayer(p);
+				sp.setPlaying(true);
+			}
+			else
+			{
+				return;
+			}
 		}
 		else
 		{
