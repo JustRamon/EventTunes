@@ -4,8 +4,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerPortalEvent;
-import org.bukkit.event.player.PlayerRespawnEvent;
 
 public class Listeners implements Listener
 {
@@ -35,10 +35,10 @@ public class Listeners implements Listener
 	}
 	
 	@EventHandler
-	public void onPlayerRespawn(PlayerRespawnEvent event)
+	public void onPlayerDeath(PlayerDeathEvent event)
 	{
-		String eventTune = "RespawnEvent";
-		Player p = event.getPlayer();
+		String eventTune = "DeathEvent";
+		Player p = event.getEntity();
 		if(methods.hasSoundPermission(eventTune, p) && config.getBoolean(eventTune + ".enable"))
 		{
 			methods.playTune(eventTune, p);

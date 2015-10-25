@@ -65,8 +65,8 @@ public class Methods
 		EventTunes.plugin.getConfig().addDefault("NetherEnterEvent.enable", true);
 		EventTunes.plugin.getConfig().addDefault("EndEnterEvent.file", "EndEnterEvent.nbs");
 		EventTunes.plugin.getConfig().addDefault("EndEnterEvent.enable", true);
-		EventTunes.plugin.getConfig().addDefault("RespawnEvent.file", "RespawnEvent.nbs");
-		EventTunes.plugin.getConfig().addDefault("RespawnEvent.enable", true);
+		EventTunes.plugin.getConfig().addDefault("DeathEvent.file", "DeathEvent.nbs");
+		EventTunes.plugin.getConfig().addDefault("DeathEvent.enable", true);
 
 		EventTunes.plugin.getConfig().options().copyDefaults(true);
 		EventTunes.plugin.saveConfig();
